@@ -46,9 +46,9 @@ enum AccountProvider {
 }
 
 model Account {
-  id               String          @id @default(cuid())
-  provider         AccountProvider
-  providerAcountId String          @unique @map("provider_account_id")
+  id                String          @id @default(cuid())
+  provider          AccountProvider
+  providerAccountId String          @unique @map("provider_account_id")
 
   user   User   @relation(fields: [userId], references: [id])
   userId String @map("user_id")
